@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // For handlebars custom helpers. None used so far.
-const hbs = exphbs.create({ });
+const hbs = exphbs.create({});
 
 const sess = {
   secret: 'Super secret secret',
