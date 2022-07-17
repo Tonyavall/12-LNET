@@ -16,11 +16,16 @@ Comment.init(
             allowNull: false,
         },
         user_id: {
-            type: DataTypes.STRING(16),
-            allowNull: false,
-            unique: true,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'User',
+                key: 'id'
+            }
+        },
+        blog_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Blog',
                 key: 'id'
             }
         },
