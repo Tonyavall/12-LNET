@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './views/**/*.handlebars',
-    "./public/**/*.{css,js}"
+    './public/**/*.{css,js}'
   ],
   theme: {
     extend: {},

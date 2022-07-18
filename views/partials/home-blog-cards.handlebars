@@ -1,22 +1,49 @@
-<div class="relative p-1 pb-16 rounded-xl group bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-    <div class="relative">
-        <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-yellow-50">
+<div class="max-w-3xl mx-0 my-7 p-4 sm:px-6 h-full">
+    <!-- Blog post -->
+    <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+        <a class="relative block group" href="#0">
+            <div class="absolute inset-0 bg-gray-800 hidden md:block transform md:translate-y-2 md:translate-x-4 xl:translate-y-4 xl:translate-x-8 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out pointer-events-none"
+                aria-hidden="true"></div>
+            <figure
+                class="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform md:-translate-y-2 xl:-translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out">
+                <img class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
+                    src="https://preview.cruip.com/open-pro/images/blog-post-01.jpg" width="540" height="303"
+                    alt="Blog post">
+            </figure>
+        </a>
+        <div>
+            <header>
+                <div class="mb-3">
+                    <ul class="flex flex-wrap text-xs font-medium -m-1">
+                        <li class="m-1">
+                            <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out"
+                                href="#0">Product</a>
+                        </li>
+                        <li class="m-1">
+                            <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
+                                href="#0">Engineering</a>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2 text-gray-500">
+                    <a class="hover:text-black transition duration-150 ease-in-out" href="#0">{{title}}</a>
+                </h3>
+            </header>
+            <p class="text-lg text-gray-400 flex-grow">{{description}}...</p>
+            <footer class="flex items-center mt-4">
+                <a href="#0">
+                    <img class="rounded-full flex-shrink-0 mr-4"
+                        src="https://preview.cruip.com/open-pro/images/news-author-04.jpg" width="40" height="40"
+                        alt="Author 04">
+                </a>
+                <div>
+                    <a class="font-medium text-black hover:text-gray-100 transition duration-150 ease-in-out"
+                        href="#0">{{user.username}}</a>
+                    <span class="text-gray-700"> - </span>
+                    <span class="text-gray-500">{{date_created}}</span>
+                </div>
+            </footer>
         </div>
-        <img src="" alt="art cover" loading="lazy" width="1000" height="667"
-            class="h-64 w-full object-cover object-top rounded-t-lg transition duration-500 group-hover:rounded-t-xl">
-    </div>
-    <div class="relative space-y-4 -mt-20 p-4">
-        <h4 class="text-2xl font-semibold text-yellow-900">{{title}}</h4>
-        <p class="text-gray-600">{{description}}...</p>
-    </div>
-    <a href="#" class="absolute inset-x-4 bottom-4 flex items-center space-x-2">
-        <div aria-hidden="true" class="h-10 w-10 flex border border-yellow-200 rounded-full">
-            <svg aria-hidden="true" width="24" height="24" fill="none"
-                class="my-auto mx-auto flex-none text-yellow-700">
-                <path d="M10.75 8.75l3.5 3.25-3.5 3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-            </svg>
-        </div>
-        <span class="text-yellow-600">Read more</span>
-    </a>
+    </article>
 </div>
+<div class="bg-gray-400 h-px w-11/12 md:hidden"></div>
