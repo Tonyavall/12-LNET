@@ -15,6 +15,10 @@ Blog.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         content: {
             type: DataTypes.STRING,
             allowNull: false,
