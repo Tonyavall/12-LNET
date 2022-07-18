@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
         const sixBlogs = dbResponse.map(blog => {
             return blog.get({ plain: true })
         })
-        console.log(sixBlogs)
         res.render('home', {
             sixBlogs
         })
