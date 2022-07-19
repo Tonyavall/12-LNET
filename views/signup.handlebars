@@ -1,3 +1,12 @@
+{{#if logged_in}}
+<div class="p-12">
+    <h1 class="text-2xl font-bold text-center text-gray-900 sm:text-3xl">You Are Already Signed In!</h1>
+
+    <p class="max-w-md mx-auto mt-4 text-center text-gray-500">
+        Start posting <a class="text-blue-500" href="/posts/create">here.</a>
+    </p>
+</div>
+{{else}}
 <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
     <div class="max-w-lg mx-auto">
         <h1 class="text-2xl font-bold text-center text-gray-900 sm:text-3xl">Get started today</h1>
@@ -12,7 +21,8 @@
                 <label for="email-signup" class="text-sm font-medium">Email</label>
 
                 <div class="relative mt-1">
-                    <input type="email" id="email-signup" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                    <input type="email" id="email-signup"
+                        class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                         placeholder="Enter email" />
 
                     <span class="absolute inset-y-0 inline-flex items-center right-4">
@@ -104,3 +114,4 @@
         </form>
     </div>
 </div>
+{{/if}}
