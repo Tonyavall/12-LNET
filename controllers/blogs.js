@@ -12,7 +12,8 @@ router.get('/blogs/:id', async (req, res) => {
         })
         const singleBlog = dbResBlog.get({ plain: true })
         res.render('blogs', {
-            singleBlog
+            singleBlog,
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         console.log(err)

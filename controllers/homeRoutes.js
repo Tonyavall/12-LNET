@@ -13,7 +13,8 @@ router.get('/', async (req, res) => {
             return blog.get({ plain: true })
         })
         res.render('home', {
-            sixBlogs
+            sixBlogs,
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         console.log(err)

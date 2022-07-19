@@ -25,53 +25,33 @@
                 <nav class="hidden md:block" aria-labelledby="header-navigation">
                     <h2 class="sr-only" id="header-navigation">Header navigation</h2>
 
+                    {{#if logged_in}}
                     <ul class="flex items-center gap-6 text-sm">
                         <li>
                             <a class="text-white transition hover:text-white/75" href="/">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="text-white transition hover:text-white/75" href="/">
-                                Careers
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="text-white transition hover:text-white/75" href="/">
-                                History
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="text-white transition hover:text-white/75" href="/">
-                                Services
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="text-white transition hover:text-white/75" href="/">
-                                Projects
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="text-white transition hover:text-white/75" href="/">
-                                Blog
+                                Profile
                             </a>
                         </li>
                     </ul>
+                    {{/if}}
                 </nav>
 
                 <div class="flex items-center gap-4">
+                    {{#if logged_in}}
+                    <div class="sm:gap-4 sm:flex">
+                        <button id="logout-btn"
+                            class="block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 transition rounded-md shadow">
+                            Logout
+                        </button>
+                    </div>
+                    {{else}}
                     <div class="sm:gap-4 sm:flex">
                         <a class="block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 transition rounded-md shadow"
                             href="/login">
                             Login
                         </a>
                     </div>
-
+                    {{/if}}
                     <button class="block p-2.5 text-white bg-gray-800 rounded md:hidden hover:text-white/75 transition">
                         <span class="sr-only">Toggle menu</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
@@ -86,6 +66,10 @@
     {{{body}}}
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/appendContent.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/signup.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>

@@ -99,7 +99,7 @@ router.post('/login', async (req, res) => {
                 .json({ message: 'Email is not registered.' });
             return;
         }
-
+        console.log(req.body.password, userData.password)
         // Verify the posted password with the password store in the database
         const validPassword = await bcrypt.compare(
             req.body.password,
@@ -116,7 +116,6 @@ router.post('/login', async (req, res) => {
 
             req.session.user_id = userData.user_id;
             req.session.logged_in = true;
-            req.session.cart_count = carts.length;
 
             res.json({ user: userData, message: 'You are now logged in!' });
         });
