@@ -10,6 +10,9 @@ module.exports = {
         '128': '64rem'
       }
     },
+    screens: {
+      'mtme': {'max': '299px'},
+    }
   },
   plugins: [
     require('tailwindcss'),
