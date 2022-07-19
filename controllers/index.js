@@ -5,11 +5,13 @@ const homeRoutes = require('./homeRoutes')
 
 const blogs = require('./blogs')
 const profile = require('./profile')
+const posts = require('./posts')
 
 const handlebars = [
     homeRoutes,
     blogs,
-    profile
+    profile,
+    posts
 ]
 router.use('/', handlebars)
 

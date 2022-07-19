@@ -15,7 +15,7 @@ router.get('/profile', loggedIn, async (req, res) => {
             user
         })
     } catch (error) {
-        console.log(err)
+        res.status(400).json(error)
     }
 })
 

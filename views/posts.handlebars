@@ -1,0 +1,12 @@
+<h2 class="text-3xl lg:text-5xl font-bold leading-tight mb-8 text-black text-center mt-10">
+    My Posts
+</h2>
+<div class="flex justify-center">
+    <hr class="border-b-2 border-gray-400 mx-4 w-11/12 md:w-4/5">
+</div>
+<section
+    class="flex flex-row flex-wrap justify-center items-center antialiased bg-white-900 text-gray-200 min-h-1/2">
+    {{#each userPosts}}
+    {{> homeBlogCard}}
+    {{/each}}
+</section>
