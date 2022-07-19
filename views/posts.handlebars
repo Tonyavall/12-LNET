@@ -10,8 +10,13 @@
 <div class="flex justify-center">
     <hr class="border-b-2 border-gray-400 mx-4 w-11/12 md:w-4/5">
 </div>
-<section class="flex flex-row flex-wrap justify-center items-center antialiased bg-white-900 text-gray-200 min-h-1/2">
+
+{{#if hasPosts}}
+<section id="myposts-container" class="flex flex-row flex-wrap justify-center items-center antialiased bg-white-900 text-gray-200 min-h-1/2">
     {{#each userPosts}}
-    {{> homeBlogCard}}
+    {{> postsBlogCard}}
     {{/each}}
 </section>
+{{else}}
+<p class="text-base text-center text-gray-400 flex-grow m-8 text-xl">No Blogs. Spread Some Knowledge!</p>
+{{/if}}

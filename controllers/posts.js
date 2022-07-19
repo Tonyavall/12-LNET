@@ -1,4 +1,4 @@
-const { Blog } = require('../models');
+const { Blog, User } = require('../models');
 const loggedIn = require('../utils/auth');
 
 const router = require('express').Router();
@@ -9,13 +9,30 @@ router.get('/posts', loggedIn, async (req, res) => {
             where: { user_id: req.session.user_id }
         })
         const userPosts = dbResponse.map(post => post.get({ plain: true }))
+        const hasPosts = userPosts.length > 0 ? true : false
 
         res.render('posts', {
             logged_in: req.session.logged_in,
-            userPosts
+            userPosts,
+            hasPosts
         })
     } catch (error) {
-        console.log(error)
+        res.status(400).json(error)
+    }
+})
+
+router.delete('/posts', loggedIn, async (req, res) => {
+    try {
+        const dbResBlog = await Blog.findByPk(req.body.postId)
+        const { user_id } = dbResBlog.get({ plain: true })
+
+        if (user_id !== req.session.user_id) 
+            return res.status(401).json('Unauthorized');
+
+        await dbResBlog.destroy()
+        res.status(200).json('Success')
+    } catch (error) {
+        res.status(400).json(error)
     }
 })
 
