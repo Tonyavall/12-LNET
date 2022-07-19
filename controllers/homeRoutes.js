@@ -22,11 +22,15 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', {
+        logged_in: req.session.logged_in
+    });
 });
 
 router.get('/signup', (req, res) => {
-    res.render('signup');
+    res.render('signup', {
+        logged_in: req.session.logged_in
+    });
 });
 
 module.exports = router;
