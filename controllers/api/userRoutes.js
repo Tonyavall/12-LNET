@@ -40,8 +40,6 @@ router.post('/', async (req, res) => {
             last_name: req.body.last_name,
             email: req.body.email,
             password: req.body.password,
-            cart_id: req.body.cart_id,
-            balance: req.body.balance,
         });
         res.json('Success')
     } catch (err) {

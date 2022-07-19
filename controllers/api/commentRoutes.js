@@ -29,11 +29,12 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
+        if (req.session.user_id === null) return res.status(401).json('Need to be logged in.')
         const dbResponse = await Comment.create({
             content: req.body.content,
-            user_id: req.body.user_id,
-            blog_id: req.body.blog_id,
-            date_created: req.body.date_created
+            user_id: req.session.user_id,
+            blog_id: req.body.blogId,
+            date_created: req.body.dateCreated
         })
         res.status(200).json(dbResponse)
     } catch (err) {

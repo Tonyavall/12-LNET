@@ -5,7 +5,11 @@ module.exports = {
     './public/**/*.{css,js}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '128': '64rem'
+      }
+    },
   },
   plugins: [
     require('tailwindcss'),

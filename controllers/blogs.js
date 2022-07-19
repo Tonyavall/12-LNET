@@ -11,8 +11,11 @@ router.get('/blogs/:id', async (req, res) => {
             ],
         })
         const singleBlog = dbResBlog.get({ plain: true })
+        const hasComments = !!singleBlog.comments.length
+
         res.render('blogs', {
             singleBlog,
+            hasComments,
             logged_in: req.session.logged_in
         })
     } catch (err) {
