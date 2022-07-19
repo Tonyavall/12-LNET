@@ -1,0 +1,50 @@
+<h2 class="text-center font-bold text-4xl m-12">My Profile</h2>
+
+<section class="max-w-4xl p-6 m-12 mx-auto bg-white rounded-md shadow-md">
+    <h2 class="text-lg font-semibold text-gray-700 capitalize">Account settings</h2>
+
+    <form id="update-profile">
+        <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+            <div>
+                <label class="text-gray-700" for="update-firstname">First Name</label>
+                <input id="update-firstname" type="text" placeholder="{{user.first_name}}"
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            </div>
+
+            <div>
+                <label class="text-gray-700" for="update-lastname">Last Name</label>
+                <input id="update-lastname" type="text" placeholder="{{user.last_name}}"
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            </div>
+
+            <div>
+                <label class="text-gray-700" for="update-username">Username</label>
+                <input id="update-username" type="text" placeholder="{{user.username}}"
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            </div>
+
+            <div>
+                <label class="text-gray-700" for="update-email">Email Address</label>
+                <input id="update-email" type="email" placeholder="{{user.email}}"
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            </div>
+
+            <div>
+                <label class="text-gray-700" for="update-password">Password</label>
+                <input id="update-password" type="password" placeholder="New password.."
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            </div>
+
+            <div>
+                <label class="text-gray-700" for="update-password-confirm">Password Confirmation</label>
+                <input id="update-password-confirm" type="password" placeholder="Confirm new password.."
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring">
+            </div>
+        </div>
+
+        <div id="update-profile-btn-container" class="mt-6">
+            <button
+                class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+        </div>
+    </form>
+</section>

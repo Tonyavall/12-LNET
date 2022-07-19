@@ -4,10 +4,12 @@ const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes')
 
 const blogs = require('./blogs')
+const profile = require('./profile')
 
 const handlebars = [
     homeRoutes,
-    blogs
+    blogs,
+    profile
 ]
 router.use('/', handlebars)
 
