@@ -48,6 +48,7 @@ router.get('/posts/create', loggedIn, async (req, res) => {
 
 router.post('/posts/create', loggedIn, async (req, res) => {
     try {
+        console.log(req.body.content)
         const dbResponse = await Blog.create({
             title: req.body.title,
             description: req.body.description,

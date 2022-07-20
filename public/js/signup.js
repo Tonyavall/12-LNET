@@ -44,9 +44,9 @@ const signupFormHandler = async (event) => {
             const dbMessage = await response.json()
 
             if (response.ok) {
-                return document.location.replace('/login');
+                return document.location.replace('/login')
             }
-            const checkMessage = document.querySelector('.invalid-auth');
+            const checkMessage = document.querySelector('.invalid-auth')
 
             if (checkMessage) {
                 checkMessage.remove();

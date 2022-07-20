@@ -12,10 +12,9 @@
             <p class="text-sm md:text-base font-normal text-gray-600">Published {{format_date singleBlog.date_created}}</p>
         </div>
 
-
         <!--Post Content-->
         <p class="py-6">
-            {{singleBlog.content}}
+            {{format_text singleBlog.content}}
         </p>
         <!--/ Post Content-->
     </div>
@@ -68,3 +67,5 @@
        </div>
    </div>
 </form>
+
+<script src="/js/comment.js"></script>

@@ -12,7 +12,7 @@ router.get('/blogs/:id', async (req, res) => {
         })
         const singleBlog = dbResBlog.get({ plain: true })
         const hasComments = !!singleBlog.comments.length
-
+        console.log(singleBlog)
         res.render('blogs', {
             singleBlog,
             hasComments,
