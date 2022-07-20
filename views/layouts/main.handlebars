@@ -50,6 +50,14 @@
                             Logout
                         </button>
                     </div>
+                    <button id="ham-btn"
+                        class="block p-2.5 text-white bg-gray-800 rounded md:hidden hover:text-white/75 transition">
+                        <span class="sr-only">Toggle menu</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                     {{else}}
                     <div class="sm:gap-4 sm:flex">
                         <a class="block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 transition rounded-md shadow"
@@ -58,23 +66,34 @@
                         </a>
                     </div>
                     {{/if}}
-                    <button class="block p-2.5 text-white bg-gray-800 rounded md:hidden hover:text-white/75 transition">
-                        <span class="sr-only">Toggle menu</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
     </header>
+    <div id="ham-dropdown-menu"
+        class="hidden absolute md:hidden right-0 z-10 w-28 bg-gray-900 rounded divide-y divide-gray-100 shadow">
+        <ul class="py-1 text-sm w-full text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
+            <li>
+                <a href="/profile"
+                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+            </li>
+            <li>
+                <a href="/posts"
+                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Posts</a>
+            </li>
+            <li>
+                <a href="/posts/create"
+                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">New Post</a>
+            </li>
+        </ul>
+    </div>
     {{{body}}}
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/js/getDate.js"></script>
     <script src="/js/appendContent.js"></script>
     <script src="/js/logout.js"></script>
+    <script src="/js/hamburger.js"></script>
 </body>
 
 </html>
