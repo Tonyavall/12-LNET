@@ -11,6 +11,9 @@ const updateProfileHandler = async e => {
     const confirmPassword = document.querySelector('#update-password-confirm').value.trim();
 
     const updateBtnContainer = document.getElementById('update-profile-btn-container')
+    
+    const checkMessage = document.querySelector('.invalid-auth')
+    if (checkMessage) checkMessage.remove()
 
     if (password !== confirmPassword) {
         return appendContent({
