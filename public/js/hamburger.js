@@ -9,4 +9,4 @@ const hbToggle = () => {
     }
 }
 
-hamBtn.addEventListener('click', hbToggle)
+if (hamBtn) hamBtn.addEventListener('click', hbToggle)
