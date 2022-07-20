@@ -1,8 +1,28 @@
+{{#if is_user}}
+<div class="relative flex">
+    <div class="flex-shrink-0 mr-3">
+        <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="http://i.pravatar.cc/199" alt="">
+    </div>
+    <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+        <strong>{{user.username}}</strong> <span class="text-xs text-gray-400">{{format_date date_created}}</span>
+        <p class="text-sm">
+            {{content}}
+        </p>
+    </div>
+
+    <button type="button"
+        class="absolute top-2 right-2 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+        <span class="sr-only">Close menu</span>
+        <svg id="dc-btn" data-id="{{comment_id}}" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+</div>
+{{else}}
 <div class="flex">
     <div class="flex-shrink-0 mr-3">
-        <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
-            src="http://i.pravatar.cc/199"
-            alt="">
+        <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="http://i.pravatar.cc/199" alt="">
     </div>
     <div class="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
         <strong>{{user.username}}</strong> <span class="text-xs text-gray-400">{{format_date date_created}}</span>
@@ -11,3 +31,4 @@
         </p>
     </div>
 </div>
+{{/if}}

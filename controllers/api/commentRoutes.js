@@ -42,14 +42,18 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/', async (req, res) => {
     try {
-        const dbResponse = await Comment.destroy({
-            where: { comment_id: req.params.id }
+        const userComment = await Comment.findByPk(req.body.commentId, {
+            include: [{ all: true, nested: true }]
         })
+        if (req.session.user_id !== userComment.user_id) {
+            return res.status(401).json('Invalid Auth')
+        }
+        const dbResponse = await userComment.destroy()
         if (!dbResponse) {
             return res.status(400).json({
-                message: 'Cart id does not exist.'
+                message: 'Comment id does not exist.'
             })
         }
         res.status(200).json(dbResponse)

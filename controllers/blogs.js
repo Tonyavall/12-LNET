@@ -12,7 +12,17 @@ router.get('/blogs/:id', async (req, res) => {
         })
         const singleBlog = dbResBlog.get({ plain: true })
         const hasComments = !!singleBlog.comments.length
-        console.log(singleBlog)
+        
+        // Attaching a true/false prop to each comment based on whether the current
+        // comment is the logged in user's comment
+        singleBlog.comments.forEach(comment=> {
+            if (comment.user_id === req.session.user_id) {
+                comment.is_user = true;
+            } else {
+                comment.is_user = false
+            }
+        })
+
         res.render('blogs', {
             singleBlog,
             hasComments,
